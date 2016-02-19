@@ -1,21 +1,21 @@
 ###################################################################
 #================================================================ #
-# pubcommand by GoGers - Colors striped, and redone by ArNz|8o8   #
+# pubcommand.tcl by GoGers 						      #
 #================================================================ #
 # ..::Description::..                                             #
 # This script is a modification of my previous script.This will be#
 # good for having your own channel and protecting it. You can     #
-# find me on dalnet under nick "anto" or channels		          #
+# find me on dalnet under nick "anto" or channels		      #
 # #delhelps / #dalhelps	 added !access !info changed notice type  #
 # to channel msg (many asked me to put in a channel msg)          #
 # so only few commands will be sending notices.	Thanks for the    #
 # support guys, any bugs please feel free to tell on DALnet       #
 #================================================================ #
-# Version: 3.01    Public Commands TCL                            #
+# Version: 3.0    Public Commands TCL                             #
 #================================================================ #
 ####################YOU MUST EDIT THIS ###############################
 #set password for nick identification if you are changing nick to registered nick and it has the same password as the botnick
-set password "E N T E R  P A S S"
+set password "TG4t4Gb5"
 
 #Commands
 
@@ -51,7 +51,7 @@ bind pub m !identify  do_identify
 
 #----------------------------------------------------------------
 proc pub_do_bot {nick host hand channel text} {
-  puthelp "PRIVMSG $nick :Commands On This Bot"
+  puthelp "PRIVMSG $nick :2Commands On This Bot"
   puthelp "PRIVMSG $nick :!op <nick> - Ops the nick on a current channel."
   puthelp "PRIVMSG $nick :!deop <nick> - Deops the nick on the current channel."
   puthelp "PRIVMSG $nick :!voice <nick> - Voices the nick on the current channel."
@@ -65,7 +65,7 @@ proc pub_do_bot {nick host hand channel text} {
   puthelp "PRIVMSG $nick :!away <msg> - Set the bot away with a message."
   puthelp "PRIVMSG $nick :!back - Sets the bot back."
   puthelp "PRIVMSG $nick :!bot - Brings up this menu. more commands to go.such as2!jump !restart !rehash !save !ban !kban !act !say !global !join !part !chattr !adduser !botnick !uptime to avoid get flooding on Pvt its restircted"
-  puthelp "PRIVMSG $nick :End of bot commands."
+  puthelp "PRIVMSG $nick :2End of bot commands."
   return
 }
 
@@ -391,7 +391,7 @@ proc pub_do_rehash  {nick host handle channel testes} {
  set who [lindex $testes 0] 
  if {$who == ""} {
  rehash 
- putquick "NOTICE $nick : Rehashing TCL script(s) and variables"
+ putserv "PRIVMSG $channel :Rehashing TCL script(s) and variables"
  return 1
 }
 }
@@ -401,8 +401,8 @@ proc pub_do_restart  {nick host handle channel testes} {
   global botnick
  set who [lindex $testes 0]
  if {$who == ""} {
- restart
- putquick "NOTICE $nick : Restarting Bot  TCL script(s) and variables"
+ 
+ putserv "PRIVMSG $channel :$nick, please use terminal for restart command... Le sigh."
  return 1
 }
 }
