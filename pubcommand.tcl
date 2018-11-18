@@ -15,7 +15,7 @@
 #================================================================ #
 ####################YOU MUST EDIT THIS ###############################
 #set password for nick identification if you are changing nick to registered nick and it has the same password as the botnick
-set password "TG4t4Gb5"
+set password ""
 
 #Commands
 
@@ -291,7 +291,7 @@ putserv "PRIVMSG $chan :Why the hell do you want to kick yourself $nick?"
 return 1
 }
 if {[matchattr $who +n]} {
-putserv "KICK $chan $nick :Trying to kick my owner eh? ;Þ"
+putserv "KICK $chan $nick :Trying to kick my owner eh? ;Ãž"
 return 1
 }
 putserv "KICK $chan $who :$why "
